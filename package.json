@@ -1,0 +1,41 @@
+{
+  "name": "Luncher-Server",
+  "version": "1.0.0",
+  "description": "Server-side of Luncher app",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env DB_ENV=testing jest --watch --verbose",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/build-week-luncher/Luncher-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/build-week-luncher/Luncher-Server/issues"
+  },
+  "homepage": "https://github.com/build-week-luncher/Luncher-Server#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "jsonwebtoken": "^8.5.0",
+    "knex": "^0.16.3",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "jest": "^24.4.0",
+    "nodemon": "^1.18.10",
+    "supertest": "^4.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
