@@ -13,7 +13,9 @@ Server-side of Luncher app
 
 RETURNS:
 
+```
 "Sanity Check!"
+```
 
 
 
@@ -23,6 +25,7 @@ RETURNS:
 
 RETURNS:
 
+```
 [
     {
         "id": id,
@@ -38,6 +41,7 @@ RETURNS:
     },
     ...
 ]
+```
 
 
 
@@ -47,6 +51,7 @@ RETURNS:
 
 RETURNS:
 
+```
 [
     {
         "id": id,
@@ -55,6 +60,7 @@ RETURNS:
         "needAmount": 888
     }
 ]
+```
 
 
 
@@ -64,18 +70,22 @@ RETURNS:
 
 Send with Body:
 
+```
 {
     username: "admin",
     password: "password"
 }
+```
 
 
 RETURNS:
 
+```
 {
     "message": "Welcome admin, have a token!",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxLCJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNTUyMzU2OTQ3LCJleHAiOjE1NTI0NDMzNDd9.y2JfNbWr8GUFVEslz_S7bv06VSjHx060vszwPT76A9w"
 }
+```
 
 
 
@@ -83,18 +93,17 @@ RETURNS:
 
 `GET` `/api/admin/:id`
 
-- 
-
 Send in Headers:
 
+```
 {
     Authorization: token
 }
-
-- 
+```
 
 RETURNS:
 
+```
 [
     {
         "id": id,
@@ -103,6 +112,7 @@ RETURNS:
         "needAmount": 888
     }
 ]
+```
 
 
 
@@ -110,19 +120,17 @@ RETURNS:
 
 `GET` `/api/admin`
 
-- 
-
 Send in Headers:
 
+```
 {
     Authorization: token
 }
-
-- 
+```
 
 RETURNS:
 
-[
+```[
     {
         "id": id,
         "schoolName": "name of the school",
@@ -137,6 +145,7 @@ RETURNS:
     },
     ...
 ]
+```
 
 
 
@@ -144,36 +153,33 @@ RETURNS:
 
 `POST` `/api/admin`
 
-- 
-
 Send in Headers:
 
-{
+```{
     Authorization: token
 }
-
-- 
+```
 
 Send in body:
 
-- 
-
+```
 {
     "schoolName": "name of the school", (required)
     "details": "Anything here!",
     "needAmount": 888 (required)
 }
-
-- 
+```
 
 RETURNS:
 
+```
 {
     "id": id,
     "schoolName": "name of the school",
     "details": "Anything here!",
     "needAmount": 888
 }
+```
 
 
 
@@ -181,33 +187,31 @@ RETURNS:
 
 `PUT` `/api/admin/:id`
 
-- 
-
 Send in Headers:
 
+```
 {
     Authorization: token
 }
-
-- 
+```
 
 Send in body:
 
-- 
-
+```
 {
     "schoolName": "name of the school", (required)
     "details": "Anything here!",
     "needAmount": 888 (required)
 }
-
-- 
+``` 
 
 RETURNS:
 
+```
 {
     "message": "The school has been updated."
 }
+```
 
 
 
@@ -215,16 +219,12 @@ RETURNS:
 
 `DELETE` `/api/admin/:id`
 
-- 
-
 Send in Headers:
 
+```
 {
     Authorization: token
 }
-
-- 
-
+```
 
 RETURNS:
-
