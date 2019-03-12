@@ -3,6 +3,8 @@ const bcrypt = require("bcryptjs");
 const makeToken = require("../auth/makeToken.js");
 const Users = require("../users/usersModule.js");
 
+// "/auth"
+
 router.post("/register", (req, res) => {
   let user = req.body;
 
@@ -20,23 +22,29 @@ router.post("/register", (req, res) => {
     });
 });
 
-router.post('/login', (req,res) => {
-    let { username, password } = req.body;
+router.post("/login", (req, res) => {
+  let { username, password } = req.body;
 
-    Users.findBy({ username }).first().then( user => {
-        // check that passwords match
-        if(user && bcrypt.compareSync(password, user.password)) {
-            const token = makeToken.generateToken(user); // generate new token
+  Users.findBy({ username })
+    .first()
+    .then(user => {
+      // check that passwords match
+      if (user && bcrypt.compareSync(password, user.password)) {
+        const token = makeToken.generateToken(user); // generate new token
 
-            res.status(200).json({ message: `Welcome ${user.username}, have a token!`, token})
-        } else {
-            res.status(401).json({ message: "Invalid Credentials. Please enter a valid user name and password. Thank you."});
-        }
+        res
+          .status(200)
+          .json({ message: `Welcome ${user.username}, have a token!`, token });
+      } else {
+        res.status(401).json({
+          message:
+            "Invalid Credentials. Please enter a valid user name and password. Thank you."
+        });
+      }
     })
     .catch(error => {
-        res.status(500).json(error);
+      res.status(500).json(error);
     });
 });
-
 
 module.exports = router;

@@ -12,7 +12,3 @@ function find() {
 function findById(id) {
   return db("schools").where({ id: Number(id) });
 }
-
-function update(id, changes) {
-  return db ('schools').where('id', id).update(changes);
-}

@@ -29,8 +29,4 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// restricted
-
-
-
 module.exports = router;
