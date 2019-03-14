@@ -91,33 +91,6 @@ RETURNS:
 
 ### (restricted) Get all schools for admin:
 
-`GET` `/api/admin/:id`
-
-Send in Headers:
-
-```
-{
-    Authorization: token
-}
-```
-
-RETURNS:
-
-```
-[
-    {
-        "id": id,
-        "schoolName": "name of the school",
-        "details": "Anything here!",
-        "needAmount": 888
-    }
-]
-```
-
-
-
-### (restricted) Get a schools by id for admin:
-
 `GET` `/api/admin`
 
 Send in Headers:
@@ -144,6 +117,33 @@ RETURNS:
         "needAmount": 888
     },
     ...
+]
+```
+
+
+
+### (restricted) Get a schools by id for admin:
+
+`GET` `/api/admin/:id`
+
+Send in Headers:
+
+```
+{
+    Authorization: token
+}
+```
+
+RETURNS:
+
+```
+[
+    {
+        "id": id,
+        "schoolName": "name of the school",
+        "details": "Anything here!",
+        "needAmount": 888
+    }
 ]
 ```
 

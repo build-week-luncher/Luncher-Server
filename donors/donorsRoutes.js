@@ -1,19 +1,19 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const makeToken = require("../auth/makeToken.js");
-const Users = require("../users/usersModel.js");
+const Donors = require("./donorsModel.js");
 
-// "/auth"
+// "/donor"
 
 router.post("/register", (req, res) => {
-  let user = req.body;
+  let donor = req.body;
 
-  // generate hash from user's password
-  const hash = bcrypt.hashSync(user.password, 10); // 2^n
-  // override user.password with new hash
-  user.password = hash;
+  // generate hash from donor's password
+  const hash = bcrypt.hashSync(donor.password, 10); // 2^n
+  // override donor.password with new hash
+  donor.password = hash;
 
-  Users.add(user)
+  Donors.add(donor)
     .then(saved => {
       res.status(201).json(saved);
     })
@@ -25,20 +25,20 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   let { username, password } = req.body;
 
-  Users.findBy({ username })
+  Donors.findBy({ username })
     .first()
-    .then(user => {
+    .then(donor => {
       // check that passwords match
-      if (user && bcrypt.compareSync(password, user.password)) {
-        const token = makeToken.generateToken(user); // generate new token
+      if (donor && bcrypt.compareSync(password, donor.password)) {
+        const token = makeToken.generateToken(donor); // generate new token
 
         res
           .status(200)
-          .json({ message: `Welcome ${user.username}, have a token!`, token });
+          .json({ message: `Welcome ${donor.username}, have a token!`, token });
       } else {
         res.status(401).json({
           message:
-            "Invalid Credentials. Please enter a valid user name and password. Thank you."
+            "Invalid Credentials. Please enter a valid donor name and password. Thank you."
         });
       }
     })

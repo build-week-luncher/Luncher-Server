@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const Schools = require("./adminModule.js");
+const Schools = require("./adminModel.js");
 
 const restricted = require("../auth/middlewareRestricted.js");
 

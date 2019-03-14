@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const Schools = require("./schoolsModule.js");
+const Schools = require("./schoolsModel.js");
 
 // "/api/schools"
 
