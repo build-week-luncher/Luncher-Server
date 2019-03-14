@@ -52,6 +52,36 @@ exports.seed = function(knex, Promise) {
           schoolName: "Springville High",
           details: "Anything here!",
           needAmount: "870"
+        },
+        {
+          id: 9,
+          schoolName: "Peck High",
+          details: "Anything here!",
+          needAmount: "870"
+        },
+        {
+          id: 10,
+          schoolName: "Domingo High",
+          details: "Anything here!",
+          needAmount: "870"
+        },
+        {
+          id: 11,
+          schoolName: "Safran High",
+          details: "Anything here!",
+          needAmount: "870"
+        },
+        {
+          id: 12,
+          schoolName: "Moreno High",
+          details: "Anything here!",
+          needAmount: "870"
+        },
+        {
+          id: 13,
+          schoolName: "Galang High",
+          details: "Anything here!",
+          needAmount: "870"
         }
       ]);
     });
